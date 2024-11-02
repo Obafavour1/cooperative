@@ -21,7 +21,46 @@ const loans = [
     defaultedFeeRate:0.02,
     termStateDate: 'January,2024',
     nextInterestDate:'March,2025',
-    pendingPayment: 20,
+    pendingPayment: 60,
+    unpaidInterest:4,
+    url:'#'
+  },
+  {
+    fullName: "Christfavour Oloba",
+    email:'olobafavour@gmail.com',
+    principalAmount: "400,000",
+    outstandingBalance: "$250.00",
+    interestRate: 0.1,
+    defaultedFeeRate:0.02,
+    termStateDate: 'January,2024',
+    nextInterestDate:'March,2025',
+    pendingPayment: 50,
+    unpaidInterest:4,
+    url:'#'
+  },
+  {
+    fullName: "Christfavour Oloba",
+    email:'olobafavour@gmail.com',
+    principalAmount: "400,000",
+    outstandingBalance: "$250.00",
+    interestRate: 0.1,
+    defaultedFeeRate:0.02,
+    termStateDate: 'January,2024',
+    nextInterestDate:'March,2025',
+    pendingPayment: 40,
+    unpaidInterest:4,
+    url:'#'
+  },
+  {
+    fullName: "Christfavour Oloba",
+    email:'olobafavour@gmail.com',
+    principalAmount: "400,000",
+    outstandingBalance: "$250.00",
+    interestRate: 0.1,
+    defaultedFeeRate:0.02,
+    termStateDate: 'January,2024',
+    nextInterestDate:'March,2025',
+    pendingPayment: 30,
     unpaidInterest:4,
     url:'#'
   },
@@ -47,46 +86,7 @@ const loans = [
     defaultedFeeRate:0.02,
     termStateDate: 'January,2024',
     nextInterestDate:'March,2025',
-    pendingPayment: 20,
-    unpaidInterest:4,
-    url:'#'
-  },
-  {
-    fullName: "Christfavour Oloba",
-    email:'olobafavour@gmail.com',
-    principalAmount: "400,000",
-    outstandingBalance: "$250.00",
-    interestRate: 0.1,
-    defaultedFeeRate:0.02,
-    termStateDate: 'January,2024',
-    nextInterestDate:'March,2025',
-    pendingPayment: 20,
-    unpaidInterest:4,
-    url:'#'
-  },
-  {
-    fullName: "Christfavour Oloba",
-    email:'olobafavour@gmail.com',
-    principalAmount: "400,000",
-    outstandingBalance: "$250.00",
-    interestRate: 0.1,
-    defaultedFeeRate:0.02,
-    termStateDate: 'January,2024',
-    nextInterestDate:'March,2025',
-    pendingPayment: 20,
-    unpaidInterest:4,
-    url:'#'
-  },
-  {
-    fullName: "Christfavour Oloba",
-    email:'olobafavour@gmail.com',
-    principalAmount: "400,000",
-    outstandingBalance: "$250.00",
-    interestRate: 0.1,
-    defaultedFeeRate:0.02,
-    termStateDate: 'January,2024',
-    nextInterestDate:'March,2025',
-    pendingPayment: 20,
+    pendingPayment: 10,
     unpaidInterest:4,
     url:'#'
   },
@@ -125,7 +125,7 @@ const loans = [
       </TableHeader>
       <TableBody>
         {loans.map((loan) => (
-          <TableRow >
+          <TableRow key={loan.pendingPayment}>
             <TableCell className="">{loan.fullName}</TableCell>
             {/* <TableCell className="">{loan.email}</TableCell> */}
             <TableCell>{loan.principalAmount}</TableCell>

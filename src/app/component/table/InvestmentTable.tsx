@@ -6,7 +6,7 @@ import {
     TableBody,
     TableCaption,
     TableCell,
-    TableFooter,
+    // TableFooter,
     TableHead,
     TableHeader,
     TableRow,

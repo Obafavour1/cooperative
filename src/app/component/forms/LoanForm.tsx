@@ -15,6 +15,7 @@ const LoanForm = () => {
             <label htmlFor="">Borrower Id</label>
             <input {...register('borrowerId',{required:true})} type="number" placeholder='Enter borrower Id' className='input'/>
           </div>
+          {errors.borrowerId && <p role="alert">{errors.borrowerId.message}</p>}
 
           <div className='formDiv'>
             <label htmlFor="">Principal amount</label>

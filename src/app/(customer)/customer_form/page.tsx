@@ -1,5 +1,4 @@
 import CustomerForm from "@/app/component/forms/CustomerForm"
-import { Button } from "@/components/ui/button"
 
 const page = () => {
   return (

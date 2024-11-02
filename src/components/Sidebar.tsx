@@ -1,12 +1,12 @@
 import React from 'react'
-import { Calendar, ChevronDown, Home, Inbox, Search, Settings } from "lucide-react"
+// import { Calendar, ChevronDown, Home, Inbox, Search, Settings } from "lucide-react"
 
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-  } from "@/components/ui/accordion"
+// import {
+//     Accordion,
+//     AccordionContent,
+//     AccordionItem,
+//     AccordionTrigger,
+//   } from "@/components/ui/accordion"
 import Link from 'next/link'
 
 
@@ -66,7 +66,7 @@ const Sidebar = () => {
                     items.map(item=>{
                       const {title,url}=item
                         return(
-                            <div>
+                            <div key={title}>
                               <Link href={url}> <p className='cursor-pointer hover:bg-neutral-200/60 p-1 px-2 rounded-md shadow-sm flex gap-4'><p></p>{title}
                                 {/* <ChevronDown className='w-4'/> */}
                                 </p></Link>

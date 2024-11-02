@@ -17,11 +17,13 @@ const InvestmentForm = () => {
     const onSubmit:SubmitHandler<InvestmentInput> =(data) =>console.log(data)
   return (
     <div className=''>
-        <form action="" className='grid gap-4'>
+        <form onSubmit={handleSubmit(onSubmit)} action="" className='grid gap-4'>
             <div className='formDiv'>
                 <label htmlFor="">UserId</label>
                 <input {...register('investorId',{required:true})} className='input' type="text" placeholder='Type in your user id'/>
             </div>
+            {errors.investorId && <p role="alert">{errors.investorId.message}</p>}
+
             <div className='formDiv'>
                 <label htmlFor="">Initial investment</label>
                 <input {...register('initialInvestment',{required:true})} className='input' type="number" placeholder='What type of collateral'/>

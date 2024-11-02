@@ -1,12 +1,12 @@
 import React from 'react'
 import InvestmentTable from '../component/table/InvestmentTable'
 import { Button } from '@/components/ui/button'
-import Link from 'next/link'
+// import Link from 'next/link'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
-  DialogFooter,
+  // DialogFooter,
   DialogHeader,
   DialogTitle,
   DialogTrigger,

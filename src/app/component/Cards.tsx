@@ -40,13 +40,13 @@ const Cards = () => {
                 analyticsCard.map(analyse=>{
                     const {title, amount, icon, analytics, id}=analyse
                     return(
-                        <div className='flex justify-between border-1 shadow-2xl bg-white rounded-[20px] px-5 py-3'>
-                            <div key={analyse.id}>
+                        <div key={id} className='flex justify-between border-1 shadow-2xl bg-white rounded-[20px] px-5 py-3'>
+                            <div >
                                 <p className='font-semibold text-[12px]'>{title}</p>
                                 <p className='text-xl font-bold py-2'>{amount}</p>
                                 <p className='text-[12px] font-medium text text-neutral-500'>{analytics}</p>
                             </div>
-                            <Image src={analyse.icon} alt='icon' width={50} height={50} />
+                            <Image src={icon} alt='icon' width={50} height={50} />
                         </div>
                     )
                 })

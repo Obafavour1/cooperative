@@ -11,11 +11,13 @@ const CustomerForm = () => {
 
   return (
     <div className='w-[60vw] mx-auto'>
-        <form action="" className='grid gap-4'>
+        <form onSubmit={handleSubmit(onSubmit)} action="" className='grid gap-4'>
           <div className='formDiv'>
             <label htmlFor="">Full Name</label>
             <input  {...register('fullName',{required:true})} className='input' type="text" placeholder='Type in your full name'/>
           </div>
+          {errors.fullName && <p role="alert">{errors.fullName.message}</p>}
+
           <div className='formDiv'>
             <label htmlFor="">Date of Birth</label>
             <input {...register('dateOfBirth',{required:true})} className='input' type="text" placeholder='Type in your date of birth'/>

@@ -202,10 +202,10 @@ interface NextOfKin {
   
   // OFFLINE SAVINGS
 
-  interface OfflineSavings {
-    accountHolderId: string; // Reference to "User" collection
-    amount: number;
-  }
+  // interface OfflineSavings {
+  //   accountHolderId: string; // Reference to "User" collection
+  //   amount: number;
+  // }
 
   // INVESTMENT TABLE
 

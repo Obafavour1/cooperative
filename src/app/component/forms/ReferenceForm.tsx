@@ -17,6 +17,8 @@ const RefereeForm = () => {
                 <label htmlFor="">Full Name</label>
                 <input {...register('fullName',{required:true})} className='input' type="text" placeholder='Type your full name'/>
             </div>
+            {errors.fullName && <p role="alert">{errors.fullName.message}</p>}
+
             <div className='formDiv'>
                 <label htmlFor="">Relationship</label>
                 <input {...register('relationship',{required:true})} className='input' type="text" placeholder='What relationship do you share'/>

@@ -16,11 +16,13 @@ const CollateralForm = () => {
     const onSubmit:SubmitHandler<CollateralInput> =(data) =>console.log(data)
   return (
     <div className=''>
-        <form action="" className='grid gap-4'>
+        <form action="" onSubmit={handleSubmit(onSubmit)} className='grid gap-4'>
             <div className='formDiv'>
                 <label htmlFor="">UserId</label>
                 <input {...register('userId',{required:true})} className='input' type="text" placeholder='Type in your user id'/>
             </div>
+            {errors.userId && <p role="alert">{errors.userId.message}</p>}
+
             <div className='formDiv'>
                 <label htmlFor="">Collateral Type</label>
                 <input {...register('type',{required:true})} className='input' type="text" placeholder='What type of collateral'/>
