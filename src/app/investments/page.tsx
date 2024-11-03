@@ -1,7 +1,7 @@
 import React from 'react'
 import InvestmentTable from '../component/table/InvestmentTable'
 import { Button } from '@/components/ui/button'
-// import Link from 'next/link'
+
 import {
   Dialog,
   DialogContent,
@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import InvestmentForm from '../component/forms/InvestmentForm'
-// import Link from 'next/link'
+
 import { SearchIcon } from 'lucide-react'
 import { ThemeSwitch } from '../component/ThemeSwitch'
 
