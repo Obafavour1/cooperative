@@ -32,7 +32,7 @@ const InvestmentForm = () => {
             }
 
             // set response message
-            const result = await response.json();
+            // const result = await response.json();
             setServerResponse("Form submitted succesfully!")
         }catch (error){
             console.error("Submission error:", error)
@@ -90,6 +90,7 @@ const InvestmentForm = () => {
                 
             </div> */}
             <Button type='submit' disabled={loading}>{loading? 'Submitting' : 'Submit'}</Button>
+            <div>{serverResponse}</div>
         </form>
    </div>)
 }

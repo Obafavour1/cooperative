@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import InvestmentForm from '../component/forms/InvestmentForm'
-import Link from 'next/link'
+// import Link from 'next/link'
 import { SearchIcon } from 'lucide-react'
 import { ThemeSwitch } from '../component/ThemeSwitch'
 

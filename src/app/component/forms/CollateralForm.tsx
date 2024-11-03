@@ -31,7 +31,7 @@ const CollateralForm = () => {
             }
 
             // set response message
-            const result = await response.json();
+            // const result = await response.json();
             setServerResponse("Form submitted succesfully!")
         }catch (error){
             console.error("Submission error:", error)
@@ -83,6 +83,9 @@ const CollateralForm = () => {
             {errors.agreeToTerms && <p role="alert" className='text-red-400'>Tick the box to continue</p>}
 
             <Button type='submit' disabled={loading}>{loading? "Submitting" : "Submit"}</Button>
+            <div>{serverResponse}</div>
+            <div></div>
+        
         </form>
    </div>)
 }

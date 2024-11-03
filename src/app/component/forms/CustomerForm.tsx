@@ -34,7 +34,7 @@ const CustomerForm = () => {
             }
 
             // set response message
-            const result = await response.json();
+            // const result = await response.json();
             setServerResponse("Form submitted succesfully!")
         }catch (error){
             console.error("Submission error:", error)
@@ -266,7 +266,7 @@ const CustomerForm = () => {
 
           </div> */}
           <Button type='submit' className='w-1/2 mx-auto mt-10 ' disabled={loading}>{loading? "Submitting" :"Submit"}</Button>
-          
+          <div>{serverResponse}</div>
         </form>
     </div>
   )

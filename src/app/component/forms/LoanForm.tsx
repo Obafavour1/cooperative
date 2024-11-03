@@ -32,7 +32,7 @@ const LoanForm = () => {
         }
 
         // set response message
-        const result = await response.json();
+        // const result = await response.json();
         setServerResponse("Form submitted succesfully!")
     }catch (error){
         console.error("Submission error:", error)
@@ -122,6 +122,7 @@ const LoanForm = () => {
           </div>
 
           <Button type='submit' disabled={loading} className='mt-10 w-1/2 mx-auto'>{loading? "Submitting": "Submitted"}</Button>
+          <div>{serverResponse}</div>
         </form>
     </div>
   )

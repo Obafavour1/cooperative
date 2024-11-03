@@ -33,7 +33,7 @@ const RefereeForm = () => {
             }
 
             // set response message
-            const result = await response.json();
+            // const result = await response.json();
             setServerResponse("Form submitted succesfully!")
         }catch (error){
             console.error("Submission error:", error)
@@ -91,6 +91,7 @@ const RefereeForm = () => {
             {errors.state && <p role="alert" className='text-red-400'>State is required</p>}
 
             <Button type='submit' disabled={loading}>{loading? "Submitting" :'Submit'}</Button>
+            <div>{serverResponse}</div>
         </form>
    </div>)
 }

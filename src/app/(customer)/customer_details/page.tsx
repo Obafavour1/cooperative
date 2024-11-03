@@ -13,7 +13,7 @@ import CollateralForm from '@/app/component/forms/CollateralForm'
 import RefereeForm from '@/app/component/forms/ReferenceForm'
 import { SearchIcon } from 'lucide-react'
 import { ThemeSwitch } from '@/app/component/ThemeSwitch'
-import Link from 'next/link'
+// import Link from 'next/link'
 
 const customers = [
     {
