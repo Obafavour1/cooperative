@@ -1,18 +1,18 @@
 "use client"
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm,  } from 'react-hook-form'
 import { CollateralInput } from '@/app/data'
 
 const CollateralForm = () => {
     const[loading, setLoading]= useState(false)
-    const[serverResponse, setServerResponse]=useState<string|null>(null)
+    // const[serverResponse, setServerResponse]=useState<string|null>(null)
 
-    const {register, handleSubmit, formState:{errors}} = useForm<CollateralInput>()
+    const {register, handleSubmit, formState:{errors}, reset} = useForm<CollateralInput>()
 
-    const onSubmit:SubmitHandler<CollateralInput> = async (data) =>{
+    const onSubmit = async (data:CollateralInput) =>{
         setLoading(true)
-        setServerResponse(null)
+        // setServerResponse(null)
 
         try{
             // call my api endpoint
@@ -26,16 +26,20 @@ const CollateralForm = () => {
             });
 
                 // Check if response was succesful
-            if(!response.ok){
-                throw new Error("Failed to submit")
+            if(response.ok){
+                alert("Form submitted successfully")
+                reset()
+            }else{
+                alert('Form submission failed.')
             }
 
             // set response message
             // const result = await response.json();
-            setServerResponse("Form submitted succesfully!")
+            // setServerResponse("Form submitted succesfully!")
         }catch (error){
             console.error("Submission error:", error)
-            setServerResponse("There was an error submitting the form")
+            alert('An error occured')
+            // setServerResponse("There was an error submitting the form")
         }finally{
             setLoading(false)
         }
@@ -83,7 +87,7 @@ const CollateralForm = () => {
             {errors.agreeToTerms && <p role="alert" className='text-red-400'>Tick the box to continue</p>}
 
             <Button type='submit' disabled={loading}>{loading? "Submitting" : "Submit"}</Button>
-            <div>{serverResponse}</div>
+            {/* <div>{serverResponse}</div> */}
             <div></div>
         
         </form>
