@@ -5,7 +5,7 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableFooter,
+  // TableFooter,
   TableHead,
   TableHeader,
   TableRow,
@@ -73,7 +73,7 @@ const loans = [
     defaultedFeeRate:0.02,
     termStateDate: 'January,2024',
     nextInterestDate:'March,2025',
-    pendingPayment: 20,
+    pendingPayment: 90,
     unpaidInterest:4,
     url:'#'
   },
@@ -110,7 +110,7 @@ const loans = [
     <Table className="">
       <TableCaption>A list of your recent loans.</TableCaption>
       <TableHeader>
-        <TableRow className="text-bold">
+        <TableRow className="text-bold py-4">
           <TableHead className="">Full name</TableHead>
           {/* <TableHead>Email</TableHead> */}
           <TableHead>Principal Amount</TableHead>
@@ -125,7 +125,7 @@ const loans = [
       </TableHeader>
       <TableBody>
         {loans.map((loan) => (
-          <TableRow key={loan.pendingPayment}>
+          <TableRow key={loan.pendingPayment} className="px-6">
             <TableCell className="">{loan.fullName}</TableCell>
             {/* <TableCell className="">{loan.email}</TableCell> */}
             <TableCell>{loan.principalAmount}</TableCell>
@@ -143,12 +143,12 @@ const loans = [
           </TableRow>
         ))}
       </TableBody>
-      <TableFooter>
+      {/* <TableFooter>
         <TableRow>
           <TableCell colSpan={3}>Total</TableCell>
           <TableCell className="text-right">$2,500.00</TableCell>
         </TableRow>
-      </TableFooter>
+      </TableFooter> */}
     </Table>
   )
 }

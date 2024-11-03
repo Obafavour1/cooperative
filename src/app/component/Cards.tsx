@@ -40,7 +40,7 @@ const Cards = () => {
                 analyticsCard.map(analyse=>{
                     const {title, amount, icon, analytics, id}=analyse
                     return(
-                        <div key={id} className='flex justify-between border-1 shadow-2xl bg-white rounded-[20px] px-5 py-3'>
+                        <div key={id} className='flex justify-between border-1 shadow-2xl bg-muted  rounded-[20px] px-5 py-3'>
                             <div >
                                 <p className='font-semibold text-[12px]'>{title}</p>
                                 <p className='text-xl font-bold py-2'>{amount}</p>

@@ -11,13 +11,15 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { SearchIcon } from 'lucide-react'
+import { ThemeSwitch } from '../component/ThemeSwitch'
 
 const page = () => {
   return (
     <section className=' sections'>
-      <div className='flex items-center justify-between'>
-        <h2 className='heading2'>Savings</h2>
-
+      <div className='navbar'>
+        <h2 className='text-[36px]'>Savings</h2>
+        <div className='flex gap-4 items-center'>
         <Dialog>
           <DialogTrigger asChild>
             <Button >Deposit</Button>
@@ -58,10 +60,17 @@ const page = () => {
             </DialogFooter>
           </DialogContent>
         </Dialog>
-
-        {/* <Link href='#'><Button>Deposit</Button></Link> */}
+          <div className='flex bg-popover shadow-lg py-3 px-4 rounded-full gap-4'>
+            <div className='flex items-center bg-input/50 px-2 rounded-full'>
+              <SearchIcon size={20}/>
+              <input type="text" placeholder='Search'  className='bg-transparent outline-none px-2'/>
+            </div>
+            <ThemeSwitch />
+          </div>
+        </div>
       </div>
-      <div className='bg-white shadow-xl rounded-lg'>
+      
+      <div className='layer2'>
         
         <SavingTable/>
         
