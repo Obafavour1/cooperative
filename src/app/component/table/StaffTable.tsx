@@ -1,5 +1,7 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+// import axios from "axios"
 
 import {
   Table,
@@ -11,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+// import { useEffect, useState } from "react"
 
 const staffs = [
   {
@@ -57,8 +60,51 @@ const staffs = [
 ]
 
  const StaffTable= () => {
+  // const[loading,setLoading]=useState(false)
+  // const [product,setProduct]=useState()
+  // const apiUrl = 'https://cooperative-server-a77x.onrender.com/customers';
+
+  // useEffect(()=>{
+  //   const fetchData = async () =>{
+  //     setLoading(true)
+  //     try{
+  //       const response = await axios.get(apiUrl)
+
+  //       setProduct(response.status)
+  //       setLoading(false)
+  //       console.log(response.data)
+  //     } catch (error){
+  //       console.error('Error fetching custome data:',error)
+  //     }
+  //   };
+  //   fetchData()
+  // },[])
+
+  // const card = product.map(Product=>{
+  //   return(
+  //     <div>{product.id}</div>
+  //   )
+  // })
+
+  // axios.get(apiUrl).then(
+  //   response=>{
+  //     console.log('this went well')
+  //   }
+  // )
+  
+
+
+
   return (
     <Table>
+      
+        {/* {loading? <h3>loading...</h3>: product.map((products,index) =>{
+          return(
+            <div >{products.index}</div>
+          )
+        })} */}
+      
+
       <TableCaption>A list of your recent staffs.</TableCaption>
       <TableHeader>
         <TableRow>
