@@ -19,8 +19,7 @@ const page = () => {
             <input type="text" placeholder='Search'  className='bg-transparent outline-none px-2'/>
           </div>
           <ThemeSwitch />
-          token you have login
-          header
+          
         </div>
       </div>
       <div className='layer2'>
