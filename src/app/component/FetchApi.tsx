@@ -3,7 +3,7 @@ import axios from 'axios'
 // import { Divide } from 'lucide-react'
 import React, { useEffect } from 'react'
 
-const urlApi = 'https://cooperative-server-a77x.onrender.com/cooperative-staff/all'
+const urlApi = 'https://cooperative-server-a77x.onrender.com'
 
 const FetchApi = () => {
     // const [data, setData] = useState(null);
@@ -50,7 +50,7 @@ const FetchApi = () => {
 //   }, []);
 
   return (
-    <div>checkout</div>
+    <div>checkout new</div>
     // <div>{loading ? <h1>loading...</h1>: <h2>click to load</h2>}</div>
   )
 }
