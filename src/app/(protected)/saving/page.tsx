@@ -1,5 +1,5 @@
 import React from 'react'
-import SavingTable from '../component/table/SavingTable'
+import SavingTable from '../../component/table/SavingTable'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -12,7 +12,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import { SearchIcon } from 'lucide-react'
-import { ThemeSwitch } from '../component/ThemeSwitch'
+import { ThemeSwitch } from '../../component/ThemeSwitch'
 
 const page = () => {
   return (

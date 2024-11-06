@@ -15,7 +15,8 @@ const FetchApi = () => {
                 const response = await axios.get(urlApi,{
                     headers:{
                         // Authorization: `Bearer ${process.env.REACT_APP_API_TOKEN}`,
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                    
                     },
                     withCredentials: true,
                 });

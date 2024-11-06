@@ -1,18 +1,17 @@
 import React from 'react'
-import StaffTable from '../../component/table/StaffTable'
+import CustomerTable from '../../../component/table/CustomerTable'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { SearchIcon } from 'lucide-react'
 import { ThemeSwitch } from '@/app/component/ThemeSwitch'
 
-
 const page = () => {
   return (
-    <section className='sections'>
-        <div className='navbar'>
-          <h2 className='text-[36px]'>Staff</h2>
+    <section className=' sections'>
+      <div className='navbar'>
+          <h2 className='text-[36px]'>Customer</h2>
           <div className='flex gap-4 items-center'>
-          <Link href='/staff_form'><Button>Add staff</Button></Link>
+          <Link href='/customer_form'><Button>Add customer</Button></Link>
           <div className='flex bg-popover shadow-lg py-3 px-4 rounded-full gap-4'>
             <div className='flex items-center bg-input/50 px-2 rounded-full'>
               <SearchIcon size={20}/>
@@ -22,10 +21,11 @@ const page = () => {
           </div>
           </div>
         </div>
-        <div className='layer2'>
+      <div className='layer2'>
         
-          <StaffTable/>
-        </div>
+        <CustomerTable/>
+        
+      </div>
     </section>
   )
 }

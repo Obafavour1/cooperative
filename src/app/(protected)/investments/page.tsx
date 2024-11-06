@@ -1,5 +1,5 @@
 import React from 'react'
-import InvestmentTable from '../component/table/InvestmentTable'
+import InvestmentTable from '../../component/table/InvestmentTable'
 import { Button } from '@/components/ui/button'
 
 import {
@@ -11,10 +11,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import InvestmentForm from '../component/forms/InvestmentForm'
+import InvestmentForm from '../../component/forms/InvestmentForm'
 
 import { SearchIcon } from 'lucide-react'
-import { ThemeSwitch } from '../component/ThemeSwitch'
+import { ThemeSwitch } from '../../component/ThemeSwitch'
 
 const page = () => {
   return (
