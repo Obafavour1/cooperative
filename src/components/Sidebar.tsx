@@ -63,7 +63,7 @@ import Image from 'next/image'
 
 const Sidebar = () => {
   return (
-    <section className='fixed bg-sidebar shadow-2xl w-[250px] h-screen px-4 py-5   rounded-lg'>
+    <section className='hidden md:block fixed bg-sidebar shadow-2xl w-[250px] h-screen px-4 py-5   rounded-lg'>
         <div className=''>
             <h1 className='text-[28px] mt-4 pb-5 border-b'>Cooperative</h1>
 

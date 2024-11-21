@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 import {useEffect, useState } from 'react'
+// import { useRouter } from 'next/router'
 
 type LoginForm = {
   email: string;
@@ -17,6 +18,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm<LoginForm>();
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState<LoginForm>();
+  // const router = useRouter()
 
   const onSubmit:SubmitHandler<LoginForm> = (data) => {
     setLoginData(data);  // Sets login data when form is submitted
@@ -28,16 +30,22 @@ const Login = () => {
       try {
         const response = await axios.post(
           urlApi,
-          loginData,  // Pass login data here as the request payload
+          {...loginData,  "userType": "cooperativeStaff"},  // Pass login data here as the request payload
           {
             headers: {
               'Content-Type': 'application/json',
             },
-            withCredentials: true,
+            // withCredentials: true,
           }
         );
-        console.log('Login successful', response.data);
-        localStorage.setItem('token', response.data.token);
+        if(response.status ===  200 || response.status ===  201 ){
+          console.log('Login successful', response.data);
+          localStorage.setItem('token', response.data.data.token);
+          localStorage.setItem('user', JSON.stringify(response.data.data.user));
+          localStorage.setItem('cooperativeid', response.data.data.user.cooperativeId);
+        } 
+        
+        // router.push('/staff')
       } catch (err) {
         console.error('This is showing:', err);
       } finally {
@@ -52,45 +60,9 @@ const Login = () => {
 
 
 
-
-
-
-  // const {register, handleSubmit} = useForm<LoginForm>()
-  // const [loading, setLoading] =useState(false)
-  // const [loginData, setLoginData] = useState(null)
-
-  // const onSubmit = async (data:any)=>{
-  //   setLoginData(data)
-  // }
-
-
-  // useEffect(()=>{
-  //   if(loginData){
-  //     const login = async () =>{
-  //       setLoading(true)
-  //       try{
-  //         const response = await axios.post(urlApi,{
-  //           header:{
-  //             "Content-Type": 'application/json'
-  //           },
-  //           withCredentials:true
-  //         })
-  //         console.log('Login succesfull',response.data)
-  //         localStorage.setItem('token', response.data.token)
-  //       } catch(err){
-  //         console.error('This is showing:', err)
-  //       }
-  //       setLoading(false)
-
-  //     }
-  //     login()
-  //   } 
-    
-  // },[loginData])
-
   return (
-    <section className='bg-accent w-full h-screen flex justify-center items-center'>
-        <div className='bg-background w-1/2 min-h-1/2 flex'>
+    <section className='bg-accent px-5 md:px-10 w-full h-screen flex justify-center items-center'>
+        <div className='bg-background  md:w-1/2 min-h-1/2 flex'>
           <div className='py-10  px-10'>
             <h2 className='heading2'>Welcome back!</h2>
             <p className='font-semibold'>Enter your Credentials to access your account</p>
@@ -107,9 +79,9 @@ const Login = () => {
               <Button type='submit' disabled={loading}>{loading?<h2>Wait loading...</h2>: <h2>Login</h2>}</Button>
             </form>
           </div>
-          <div>
+          {/* <div>
             <h1>picture</h1>
-          </div>
+          </div> */}
         </div>
     </section>
   )

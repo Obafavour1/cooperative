@@ -48,11 +48,11 @@ const CustomerForm = () => {
     }
 
   return (
-    <div className='w-[60vw] mx-auto'>
+    <div className='md:w-[60vw] mx-auto'>
         <form onSubmit={handleSubmit(onSubmit)} action="" className=''>
-        <h3 className='font-medium text-[24px] mt-3 mb-2'>Personal Details</h3>
+        <h3 className='font-medium text-[24px] md:mt-3 mb-2'>Personal Details</h3>
   
-        <div className='grid gap-4 grid-cols-2'>
+        <div className='grid gap-4 md:grid-cols-2'>
             <div>
                     
                 <div className='formDiv'>

@@ -14,11 +14,11 @@ const StaffForm = () => {
   const onSubmit:SubmitHandler<StaffInput>=(data)=>console.log(data)
 
   return (
-    <div className='w-[60vw] mx-auto'>
+    <div className='lg:w-[60vw] mx-auto'>
 
         <form action="" onSubmit={handleSubmit(onSubmit)} className=''>
         <h3 className='font-medium text-[24px]  mb-2'>Staff Details</h3>
-          <div className='grid grid-cols-2 gap-4'>
+          <div className='grid md:grid-cols-2 gap-4'>
             <div className='formDiv'>
               <label htmlFor="">First name</label>
               <input {...register('fullname',{required:true})} className='input' type="text" placeholder='Write the purpose for the loan'/>

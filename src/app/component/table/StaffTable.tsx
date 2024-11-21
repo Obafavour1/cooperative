@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 // import axios from "axios"
+// import { CustomerInput } from "@/app/data"
 
 import {
   Table,
@@ -13,6 +14,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
+// import { useEffect, useState } from "react"
+// import { headers } from "next/headers"
 // import { useEffect, useState } from "react"
 
 const staffs = [
@@ -59,38 +62,39 @@ const staffs = [
  
 ]
 
+//  const allStaffUrl= 'https://cooperative-server-a77x.onrender.com/cooperative-staff/all'
+
  const StaffTable= () => {
-  // const[loading,setLoading]=useState(false)
-  // const [product,setProduct]=useState()
-  // const apiUrl = 'https://cooperative-server-a77x.onrender.com/customers';
+  // const[staffData, setStaffData]=useState<string| number| null>()
+  // const [loading, setLoading] = useState(false);
+  // const[error, setError] = useState<string>()
 
   // useEffect(()=>{
-  //   const fetchData = async () =>{
+  //   const staffFetchApi = async () =>{
   //     setLoading(true)
   //     try{
-  //       const response = await axios.get(apiUrl)
-
-  //       setProduct(response.status)
-  //       setLoading(false)
-  //       console.log(response.data)
-  //     } catch (error){
-  //       console.error('Error fetching custome data:',error)
+  //       const response = await axios.get(
+  //         allStaffUrl,
+  //         {
+  //           headers:{
+  //             'Content-Type' : 'application/json'
+  //           }
+  //         }
+  //       )
+        
+  //       if(response.status === 200 || response.status === 201){
+  //         console.log(response.data.data)
+  //         setStaffData(response.data.data)
+  //       }
+  //     } catch (err:any) {
+  //       console.error('This is showing:', err);
+  //       setError(err.message)
+  //     } finally {
+  //       setLoading(false);  // Ensure loading is stopped in both success and error cases
   //     }
-  //   };
-  //   fetchData()
-  // },[])
-
-  // const card = product.map(Product=>{
-  //   return(
-  //     <div>{product.id}</div>
-  //   )
-  // })
-
-  // axios.get(apiUrl).then(
-  //   response=>{
-  //     console.log('this went well')
+  //     staffFetchApi()
   //   }
-  // )
+  // },[])
   
 
 
@@ -107,7 +111,7 @@ const staffs = [
 
       <TableCaption>A list of your recent staffs.</TableCaption>
       <TableHeader>
-        <TableRow>
+        <TableRow className="text-lg">
           <TableHead className="">First name</TableHead>
           <TableHead>Last name</TableHead>
           <TableHead>Country</TableHead>
@@ -116,7 +120,7 @@ const staffs = [
           <TableHead>Institution</TableHead>
         </TableRow>
       </TableHeader>
-      <TableBody>
+      <TableBody className="text-lg">
         {staffs.map((staff) => (
           <TableRow key={staff.staffId}>
             <TableCell className="">{staff.firstName}</TableCell>
@@ -129,6 +133,10 @@ const staffs = [
 
           </TableRow>
         ))}
+
+        {/* <div>{staffData}</div>
+        <div>{loading}</div>
+        <div>{error}</div> */}
       </TableBody>
       {/* <TableFooter>
         <TableRow>

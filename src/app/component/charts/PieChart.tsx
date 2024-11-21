@@ -57,7 +57,7 @@ const chartConfig = {
 
 export function PieCharts() {
   return (
-    <Card className="flex w-1/2 shadow-2xl border-none mt-10 flex-col">
+    <Card className="flex md:w-1/2 shadow-2xl bg-muted border-none mt-10 flex-col">
       <CardHeader className="items-center pb-0">
         <CardTitle>Pie Chart </CardTitle>
         <CardDescription>January - June 2024</CardDescription>
