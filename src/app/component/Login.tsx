@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import axios from 'axios'
 import {useEffect, useState } from 'react'
-// import { useRouter } from 'next/router'
+import { useRouter } from 'next/navigation'
 
 type LoginForm = {
   email: string;
@@ -18,7 +18,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm<LoginForm>();
   const [loading, setLoading] = useState(false);
   const [loginData, setLoginData] = useState<LoginForm>();
-  // const router = useRouter()
+  const router = useRouter()
 
   const onSubmit:SubmitHandler<LoginForm> = (data) => {
     setLoginData(data);  // Sets login data when form is submitted
@@ -44,8 +44,10 @@ const Login = () => {
           localStorage.setItem('user', JSON.stringify(response.data.data.user));
           localStorage.setItem('cooperativeid', response.data.data.user.cooperativeId);
         } 
+        setTimeout(() => {
+          router.push("/admin"); // Navigate to dashboard
+        }, 200);
         
-        // router.push('/staff')
       } catch (err) {
         console.error('This is showing:', err);
       } finally {
@@ -56,7 +58,8 @@ const Login = () => {
     if (loginData) {
       login(); // Call the login function only if loginData is set
     }
-  }, [loginData]);  // Dependency on loginData
+    
+  }, [loginData, router]);  // Dependency on loginData
 
 
 
