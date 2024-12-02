@@ -14,42 +14,42 @@ import Image from 'next/image'
   const items = [
     {
       title: "Dashboard",
-      url: "/",
+      url: "/admin",
       icon: "/house.svg",
     },
     {
       title: "Cooperative staff",
-      url: "/staff",
+      url: "/admin/staff",
       icon: '/circle-user.svg',
     },
 
     {
       title: "Customers",
-      url: "/customer",
+      url: "/admin/customer",
       icon: '/contact.svg'
   },
     
     {
       title: "Loans",
-      url: "/loan",
+      url: "/admin/loan",
       icon: '/banknote.svg',
     },
 
     {
       title: "Savings",
-      url: "/saving",
+      url: "/admin/saving",
       icon: '/piggy-bank.svg',
     },
 
     {
         title: "Investment",
-        url: "/investments",
+        url: "/admin/investments",
         icon: '/card.svg',
     },
     
     {
       title: "Branches",
-      url: "/branches",
+      url: "/admin/branches",
       icon: '/banknote.svg'
     },
     

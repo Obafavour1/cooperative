@@ -5,6 +5,9 @@ import Link from 'next/link'
 import { SearchIcon } from 'lucide-react'
 import { ThemeSwitch } from '@/app/component/ThemeSwitch'
 import { SidebarAdmin } from '@/app/component/SidebarAdmin'
+import PopStaffForm from '@/app/component/forms/PopStaffForm'
+
+
 
 
 const page = () => {
@@ -13,7 +16,8 @@ const page = () => {
         <div className='navbar'>
           <div className='flex items-center justify-between w-full'>
             <h2 className='text-[36px]'>Staff</h2>
-            <Link href='/staff_form' className='bg-primary'><Button>Add staff</Button></Link>
+            <PopStaffForm/>
+            <Link href='/admin/staff_form' className='bg-primary rounded-lg'><Button className='rounded-lg'>Add staff</Button></Link>
           </div>
           <div className='flex justify-between items-center  max-md:w-full  bg-popover shadow-lg py-2 px-2 rounded-full gap-2 md:gap-4'>
           

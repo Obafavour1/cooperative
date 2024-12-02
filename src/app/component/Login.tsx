@@ -5,6 +5,7 @@ import axios from 'axios'
 import {useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
+
 type LoginForm = {
   email: string;
   password: string;
@@ -65,27 +66,32 @@ const Login = () => {
 
   return (
     <section className='bg-accent px-5 md:px-10 w-full h-screen flex justify-center items-center'>
-        <div className='bg-background  md:w-1/2 min-h-1/2 flex'>
+        <div className='bg-background   min-h-1/2 flex'>
           <div className='py-10  px-10'>
             <h2 className='heading2'>Welcome back!</h2>
             <p className='font-semibold'>Enter your Credentials to access your account</p>
 
-            <form onSubmit={handleSubmit(onSubmit)} action="" className='grid mt-10 gap-y-5'>
-              <div className='formDiv'>
-                <label htmlFor="">Email address</label>
-                <input {...register('email',{required:true})} type="email"  className='input'/>
-              </div>
-              <div className='formDiv'>
-                <label htmlFor="">Password</label>
-                <input {...register('password',{required:true})} type="password"  className='input' />
-              </div>
-              <Button type='submit' disabled={loading}>{loading?<h2>Wait loading...</h2>: <h2>Login</h2>}</Button>
-            </form>
+            <div className='grid'>
+              <form onSubmit={handleSubmit(onSubmit)} action="" className='grid mt-10 gap-y-5'>
+                <div className='formDiv'>
+                  <label htmlFor="">Email address</label>
+                  <input {...register('email',{required:true})} type="email"  className='input'/>
+                </div>
+                <div className='formDiv'>
+                  <label htmlFor="">Password</label>
+                  <input {...register('password',{required:true})} type="password"  className='input' />
+                </div>
+                <Button type='submit' disabled={loading}>{loading?<h2>Wait loading...</h2>: <h2>Login</h2>}</Button>
+              </form>
+
+              
+            </div>
           </div>
           {/* <div>
             <h1>picture</h1>
           </div> */}
         </div>
+        {/* <PopStaffForm/> */}
     </section>
   )
 }
