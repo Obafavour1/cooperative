@@ -47,7 +47,7 @@ const Login = () => {
         } 
         setTimeout(() => {
           router.push("/admin"); // Navigate to dashboard
-        }, 500);
+        }, 200);
         
       } catch (err) {
         console.error('This is showing:', err);
